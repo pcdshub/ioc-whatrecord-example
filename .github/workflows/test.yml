@@ -8,6 +8,8 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v3
       - name: Add the problem matcher
-        run: echo "::add-matcher::matcher.json"   
+        run: |
+          - echo "::add-matcher::matcher.json"   
       - name: Make up a problem
-        run: echo "iocBoot/ioc-test/st.cmd: line 1, col 1, Error - nonsensical. (no-confusion)"
+        run: |
+          - echo "iocBoot/ioc-test/st.cmd: line 1, col 1, Error - nonsensical. (no-confusion)"
