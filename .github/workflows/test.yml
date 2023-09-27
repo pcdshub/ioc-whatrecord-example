@@ -99,7 +99,11 @@ jobs:
         run: |
           cd .docs
           yarn install
-          yarn build
+          REPO_NAME=$(basename ${{ github.repository }})
+          sed -i -e 's/^WHATRECORD_CACHE_FILE_URL.*=.*$/WHATRECORD_CACHE_FILE_URL=/'${REPO_NAME}/cache.json.gz configure/RELEASE.local
+          yarn build "--base=/${REPO_NAME}" --minify=true
+          # TODO note whatrecord router must be configured to be as such:
+          #   history: VueRouter.createWebHashHistory(import.meta.env.BASE_URL),
           cp ../support/docs/cache.json.gz dist/
           touch dist/.nojekyll
 
