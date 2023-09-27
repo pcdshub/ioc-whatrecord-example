@@ -100,10 +100,13 @@ jobs:
           cd .docs
           yarn install
           REPO_NAME=$(basename ${{ github.repository }})
-          echo "Repo name: $REPO_NAME"
           CACHE_FN=${REPO_NAME}/cache.json.gz
-          sed -i -e 's#^WHATRECORD_CACHE_FILE_URL.*=.*$#WHATRECORD_CACHE_FILE_URL='${CACHE_FN}'#' .env
-          cat 
+          echo "Repo name: $REPO_NAME"
+          echo "Cache filename name: $CACHE_FN"
+          sed -i -e 's#^WHATRECORD_CACHE_FILE_URL.*=.*$#WHATRECORD_CACHE_FILE_URL=/'${CACHE_FN}'#' .env
+
+          echo "Env settings:"
+          cat .env
           yarn build "--base=/${REPO_NAME}" --minify=true
           # TODO note whatrecord router must be configured to be as such:
           #   history: VueRouter.createWebHashHistory(import.meta.env.BASE_URL),
