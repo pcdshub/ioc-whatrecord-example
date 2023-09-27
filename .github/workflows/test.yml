@@ -67,6 +67,10 @@ jobs:
 
       - name: Dump offline information from whatrecord
         run: |
+          sed -i -e 's#^HAPPI_CFG.*=.*$##' support/docs/docs_env
+          source support/docs/docs_env
+
+          export HAPPI_CFG
           python -m whatrecord server \
             --gateway-config "./support/gateway" \
             --scripts iocBoot/ioc*/*.cmd \
