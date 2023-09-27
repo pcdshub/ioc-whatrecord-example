@@ -63,14 +63,12 @@ jobs:
           # python -m pip install whatrecord
           python -m pip install git+https://github.com/klauer/whatrecord@fix_offline
           # Optional extras:
-          python -m pip install happi  # blark pytmc blark
+          python -m pip install happi ophyd  # blark pytmc blark
 
       - name: Dump offline information from whatrecord
         run: |
-          sed -i -e 's#^HAPPI_CFG.*=.*$##' support/docs/docs_env
-          source support/docs/docs_env
+          export HAPPI_CFG=${PWD}/support/happi/
 
-          export HAPPI_CFG
           python -m whatrecord server \
             --gateway-config "./support/gateway" \
             --scripts iocBoot/ioc*/*.cmd \
