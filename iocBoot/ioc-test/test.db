@@ -1,0 +1,5 @@
+record(ai, "recordname") {
+  alias("aliasname1")
+  alias("aliasname2")
+  field(DESC , "This is a desc")
+}

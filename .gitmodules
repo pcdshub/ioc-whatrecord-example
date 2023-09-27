@@ -1,0 +1,3 @@
+[submodule "support/whatrecord"]
+	path = support/whatrecord
+	url = https://github.com/klauer/whatrecord

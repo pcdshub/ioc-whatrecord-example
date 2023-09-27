@@ -1,5 +1,5 @@
-#!../../bin/rhel7-x86_64/test
-# update
+#!../../bin/rhel7-x86_64/newtest
+# arbitrary change 1
 
 #- You may have to change test to something else
 #- everywhere it appears in this file
@@ -16,6 +16,8 @@ test_registerRecordDeviceDriver pdbbase
 dbLoadRecords("missing_dbfile.db","user=klauer")
 
 cd "${TOP}/iocBoot/${IOC}"
+dbLoadRecords("test.db","user=klauer")
+
 iocInit
 
 ## Start any sequence programs
