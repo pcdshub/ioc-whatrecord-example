@@ -101,15 +101,15 @@ jobs:
           yarn install
           yarn build
           cp ../support/docs/cache.json.gz dist/
+          touch dist/.nojekyll
 
       - name: Display structure of documentation
         run: ls -R
         working-directory: .docs
 
-      - name: Upload documentation as artifact
-        uses: actions/upload-artifact@v3
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
         with:
-          name: ${{ github.repository_owner }} ${{ github.event.repository.name }} Docs
           path: .docs/dist
 
   docs-deploy:
@@ -127,14 +127,6 @@ jobs:
 
     runs-on: ubuntu-latest
     steps:
-      - name: Download documentation artifact
-        uses: actions/download-artifact@v3
-        with:
-          name: ${{ github.repository_owner }} ${{ github.event.repository.name }} Docs
-          path: .
-      - name: Display structure of documentation
-        run: ls -R
-        working-directory: .
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
