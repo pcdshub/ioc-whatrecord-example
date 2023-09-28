@@ -1,39 +1,39 @@
-record (stringout, "$(P):cmd")
+record (stringout, "$(P)cmd")
 {
     field (DTYP, "stream")
     field (OUT,  "@test.proto command  terminal")
     field (PRIO, "HIGH")
     field (VAL, "")
 }
-record (stringout, "$(P):info")
+record (stringout, "$(P)info")
 {
     field (DTYP, "stream")
     field (OUT,  "@test.proto info terminal   ")
     field (PRIO, "HIGH")
 }
-record (stringout, "$(P):checksum")
+record (stringout, "$(P)checksum")
 {
     field (DTYP, "stream")
     field (OUT,  "@test.proto checksum     ($(CHKSUM=sum))   terminal")
 }
-record (stringin, "$(P):spy")
+record (stringin, "$(P)spy")
 {
     field (DTYP, "stream")
     field (INP,  "@test.proto spy terminal")
     field (SCAN, "I/O Intr")
-    field (FLNK, "$(P):log19")
+    field (FLNK, "$(P)log19")
 }
-record (stringin, "$(P):log0")
+record (stringin, "$(P)log0")
 {
-    field (INP,  "$(P):spy")
+    field (INP,  "$(P)spy")
 }
-record (stringin, "$(P):log1")
+record (stringin, "$(P)log1")
 {
-    field (INP,  "$(P):log0")
-    field (FLNK, "$(P):log0")
+    field (INP,  "$(P)log0")
+    field (FLNK, "$(P)log0")
 }
-record (stringin, "$(P):log2")
+record (stringin, "$(P)log2")
 {
-    field (INP,  "$(P):log1")
-    field (FLNK, "$(P):log1")
+    field (INP,  "$(P)log1")
+    field (FLNK, "$(P)log1")
 }
