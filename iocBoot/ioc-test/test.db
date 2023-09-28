@@ -1,5 +1,5 @@
-record(ai, "recordname") {
+record(ai, "$(P):recordname") {
   alias("aliasname1")
   alias("aliasname2")
-  field(DESC , "This is a desc")
+  field(DESC , "Description: user=$(user)")
 }

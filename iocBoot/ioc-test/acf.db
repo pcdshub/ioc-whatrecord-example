@@ -1,0 +1,6 @@
+record(longin, "$(P)LI:OPSTATE") {
+}
+record(longin, "$(P)LI:lev1permit") {
+}
+record(ai, "$(P)Test") {
+}
