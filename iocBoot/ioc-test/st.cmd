@@ -1,4 +1,4 @@
-#!../../bin/rhel7-x86_64/newtest
+#!../../bin/rhel7-x86_64/test
 #- You may have to change test to something else
 #- everywhere it appears in this file
 
