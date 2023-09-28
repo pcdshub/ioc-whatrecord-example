@@ -1,4 +1,4 @@
-record(ai, "$(P):recordname") {
+record(ai, "$(P)recordname") {
   alias("aliasname1")
   alias("aliasname2")
   field(DESC , "Description: user=$(user)")
