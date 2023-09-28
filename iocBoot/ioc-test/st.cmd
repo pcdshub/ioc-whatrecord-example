@@ -1,8 +1,13 @@
 #!../../bin/rhel7-x86_64/test
-#- You may have to change test to something else
-#- everywhere it appears in this file
+# Note: This isn't really intended to be a functional IOC.
+# It's merely for showing off some of whatrecord's inspection utilities
+# and the frontend.
 
 < envPaths
+
+epicsEnvSet( "ENGINEER", "Engineer" )
+epicsEnvSet( "LOCATION", "Location" )
+epicsEnvSet( "IOCSH_PS1", "ioc-useless-test> " )
 
 # Some configuration for this example:
 epicsEnvSet "STREAM_PROTOCOL_PATH", "."
@@ -24,6 +29,11 @@ dbLoadRecords("acf.db","P=IOC:ACF:,user=klauer")
 drvAsynIPPortConfigure("terminal", "localhost:40000")
 dbLoadRecords("stream.db","P=IOC:STREAM:")
 
+# Non-functional autosave
+set_savefile_path("", "autosave")
+set_pass0_restoreFile("info_positions.sav")
+set_pass0_restoreFile("info_settings.sav")
+set_pass1_restoreFile("info_settings.sav")
 iocInit
 
 cd $(TOP)

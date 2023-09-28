@@ -1,0 +1,6 @@
+file "sample_settings.req", P=IOC:autosave:, N=sample_positioner
+IOC:ACF:Test
+IOC:ACF:LI:OPSTATE
+IOC:ACF:LI:lev1permit
+IOC:STREAM:checksum
+file configMenu_settings.req P=$(P),CONFIG=scan1

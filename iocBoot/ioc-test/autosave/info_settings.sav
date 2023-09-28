@@ -1,0 +1,5 @@
+IOC:ACF:Test 10.0
+IOC:ACF:LI:OPSTATE 0
+IOC:ACF:LI:lev1permit 0
+IOC:STREAM:checksum "testing"
+<END>
