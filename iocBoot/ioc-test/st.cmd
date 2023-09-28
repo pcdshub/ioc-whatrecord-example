@@ -29,6 +29,13 @@ dbLoadRecords("acf.db","P=IOC:ACF:,user=klauer")
 drvAsynIPPortConfigure("terminal", "localhost:40000")
 dbLoadRecords("stream.db","P=IOC:STREAM:")
 
+# Motors + dbLoadTemplate
+pmacAsynIPConfigure("PMAC_S1", "8.6.7.5:309")
+pmacAsynMotorCreate("PMAC_S1", 0, 0, 8)
+drvAsynMotorConfigure("PMAC1", "pmacAsynMotor", 0, 9)
+dbLoadRecords("asyn.db","P=IOC:MOTOR:")
+dbLoadTemplate "motor.substitutions"
+
 # Non-functional autosave
 set_savefile_path("", "autosave")
 set_pass0_restoreFile("info_positions.sav")

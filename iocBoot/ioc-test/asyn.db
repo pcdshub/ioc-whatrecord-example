@@ -1,0 +1,8 @@
+record(asyn,"$(P)ASYN")
+{
+    field(DTYP,"asynRecordDevice")
+    field(PORT,"PMAC_S1")
+    field(ADDR,"0")
+    field(OMAX,"80")
+    field(IMAX,"80")
+}
