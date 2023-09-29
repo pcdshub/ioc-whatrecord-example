@@ -25,17 +25,18 @@ jobs:
           fetch-depth: 0
           submodules: 'recursive'
 
-      - name: Install required system packages
-        run: |
-          sudo apt-get -y install gdb
-
-      - name: Install Python
-        uses: actions/setup-python@v4
+      - name: Setup conda
+        uses: conda-incubator/setup-miniconda@v2
         with:
-          python-version: '3.10'
+          python-version: "3.10"
+          miniforge-variant: Mambaforge
+          miniforge-version: latest
+          activate-environment: whatrecord-env
+          use-mamba: true
 
       - name: Install whatrecord
         run: |
+          mamba install gdb
           # python -m pip install whatrecord
           python -m pip install git+https://github.com/klauer/whatrecord@fix_offline
           # Optional extras:
