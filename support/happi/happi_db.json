@@ -13,7 +13,7 @@
         },
         "last_edit": "Thu Jul 23 17:05:48 2020",
         "name": "motor1",
-        "prefix": "IOC:KFE:A:One",
+        "prefix": "IOC:MOTOR:M1MOTOR",
         "type": "OphydItem"
     },
     "motor2": {
@@ -30,7 +30,7 @@
         },
         "last_edit": "Thu Jul 23 17:06:44 2020",
         "name": "motor2",
-        "prefix": "IOC:KFE:B:One",
+        "prefix": "IOC:MOTOR:M2MOTOR",
         "type": "OphydItem"
     },
     "mca1": {
@@ -47,7 +47,7 @@
         },
         "last_edit": "Thu Jul 23 17:06:44 2020",
         "name": "mca1",
-        "prefix": "IOC:KFE:C:One",
+        "prefix": "IOC:ACF:Test",
         "type": "OphydItem"
     }
 }

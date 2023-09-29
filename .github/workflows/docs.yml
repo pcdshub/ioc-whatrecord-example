@@ -25,6 +25,10 @@ jobs:
           fetch-depth: 0
           submodules: 'recursive'
 
+      - name: Install required system packages
+        run: |
+          sudo apt-get -y install gdb
+
       - name: Install Python
         uses: actions/setup-python@v4
         with:
@@ -39,7 +43,7 @@ jobs:
 
       - name: Dump offline information from whatrecord
         run: |
-          export HAPPI_CFG=${PWD}/support/happi/
+          export HAPPI_CFG=${PWD}/support/happi/happi.cfg
 
           python -m whatrecord server \
             --gateway-config "./support/gateway" \
