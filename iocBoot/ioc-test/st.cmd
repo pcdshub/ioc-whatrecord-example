@@ -1,7 +1,12 @@
 #!../../bin/rhel7-x86_64/test
-# Note: This isn't really intended to be a functional IOC.
-# It's merely for showing off some of whatrecord's inspection utilities
-# and the frontend.
+#
+# pcdshub/ioc-whatrecord-example startup script
+#
+# Note: This isn't really intended to be a functional IOC. It's merely for
+# showing off some of whatrecord's inspection utilities and the frontend.
+# Take a look at the GitHub Actions workflows and the corresponding published
+# gh-pages (which must be configured as the build and deployment source in the
+# repository settings).
 
 < envPaths
 
