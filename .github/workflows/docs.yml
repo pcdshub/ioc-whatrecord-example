@@ -38,7 +38,9 @@ jobs:
         run: |
           mamba install gdb
           # python -m pip install whatrecord
-          python -m pip install git+https://github.com/klauer/whatrecord@fix_offline
+          # There are some unreleased changes we use here, primarily relating
+          # to offline JSON and the frontend:
+          python -m pip install git+https://github.com/pcdshub/whatrecord@master
           # Optional extras:
           python -m pip install happi ophyd  # blark pytmc blark
 
